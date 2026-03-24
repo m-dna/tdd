@@ -14,7 +14,12 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
+option(COVERAGE "Enable coverage" ON)
 
+if(COVERAGE)
+    add_compile_options(--coverage -O0 -g)
+    add_link_options(--coverage)
+endif()
 
 # ======================
 # Calculator 라이브러리
