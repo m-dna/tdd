@@ -4,15 +4,9 @@ project(TDD)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# GoogleTest 자동 다운로드
-include(FetchContent)
-
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/refs/heads/main.zip
-)
-
-FetchContent_MakeAvailable(googletest)
+# GoogleTest 빌드
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+add_subdirectory(gtest)
 
 option(COVERAGE "Enable coverage" ON)
 
