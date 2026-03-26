@@ -16,7 +16,7 @@ protected:
 
 TEST_F(CalculatorTest, Add) {    
     EXPECT_EQ(calc.add(2, 3), 5);
-    EXPECT_EQ(calc.add(2, 4), 7);
+    EXPECT_EQ(calc.add(2, 4), 6);
 }
 
 TEST_F(CalculatorTest, Subtract) {
