@@ -29,3 +29,7 @@ TEST_F(SolutionTest, input3) {
 TEST_F(SolutionTest, input4) {
     EXPECT_EQ(solution.solve(48), 2);
 }
+
+TEST_F(SolutionTest, input5) {
+    EXPECT_EQ(solution.solve(2), 1);
+}
