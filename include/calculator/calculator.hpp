@@ -8,7 +8,7 @@ public:
     int multiply(int a, int b);
     double divide(int a, int b);
     int modulo(int a, int b);
-    long long power(int base, int exponent);
+    unsigned long long power(int base, int exponent);
 };
 
 #endif // CALCULATOR_HPP

@@ -51,5 +51,5 @@ TEST_F(CalculatorTest, Power) {
     EXPECT_EQ(calc.power(2, 11), 2048);
     EXPECT_EQ(calc.power(2, 12), 4096);
     EXPECT_EQ(calc.power(2, 32), 4294967296);
-    EXPECT_EQ(calc.power(2, 63), 9223372036854775808);
+    EXPECT_EQ(calc.power(2, 63), 9223372036854775808ULL);
 }

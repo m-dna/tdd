@@ -23,22 +23,22 @@ int Calculator::modulo(int a, int b) {
     return a % b;
 }
 
-long long Calculator::power(int base, int exponent) {
-    long long ret = 1;
-    for (int i = 0; i < exponent; ++i) {
-        ret *= base;
-    }
-    return ret;
-}
+// long long Calculator::power(int base, int exponent) {
+//     long long ret = 1;
+//     for (int i = 0; i < exponent; ++i) {
+//         ret *= base;
+//     }
+//     return ret;
+// }
 
 // O(logN)으로 개선한 코드
-// long long Calculator::power(int base, int exponent) {
-//     if (exponent <= 0) return 1;
+unsigned long long Calculator::power(int base, int exponent) {
+    if (exponent <= 0) return 1;
 
-//     long long temp = power(base, exponent / 2);
+    long long temp = power(base, exponent / 2);
      
-//     if (exponent % 2 == 0) {
-//         return temp * temp;
-//     } else 
-//         return temp * temp * base;
-// }
+    if (exponent % 2 == 0) {
+        return temp * temp;
+    } else 
+        return temp * temp * base;
+}
