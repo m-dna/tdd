@@ -16,26 +16,26 @@ if(COVERAGE)
 endif()
 
 # ======================
-# Calculator 라이브러리
+# Calculator 라이브러리(git/tdd/test/)
 # ======================
-add_library(calculator
-    src/calculator/calculator.cpp
+add_library(stick
+    src/stick/stick.cpp
 )
 
-target_include_directories(calculator PUBLIC include)
+target_include_directories(stick PUBLIC include)
 
 # ======================
 # 테스트 실행 파일
 # ======================
-add_executable(calculator_test
-    test/calculator/calculator_test.cpp
+add_executable(stick_test
+    test/stick/stick_test.cpp
 )
 
-target_link_libraries(calculator_test
-    calculator
+target_link_libraries(stick_test
+    stick
     GTest::gtest_main
 )
 
 enable_testing()
 include(GoogleTest)
-gtest_discover_tests(calculator_test)
+gtest_discover_tests(stick_test)
