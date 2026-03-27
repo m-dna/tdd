@@ -30,13 +30,13 @@
 
 `기능 요구사항`
 
-- enqueue (삽입)
-- dequeue (삭제)
-- isEmpty
-- isFull
-- size
+- push() : 값 삽입
+- pull() : 값 삭제
+- clear() : 큐 초기화
+- top() : 큐 첫번째 요소 반환
+- size() : 큐 사이즈 반환
 
 `예외 처리`
 
-- 큐가 가득 찼을 때 enqueue 시 예외 발생
-- 큐가 비어있을 때 dequeue 시 예외 발생
+- 큐가 가득 찼을 때 push 시 예외 발생
+- 큐가 비어있을 때 pull 시 예외 발생
