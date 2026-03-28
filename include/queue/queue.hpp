@@ -9,6 +9,7 @@ private:
     int sp;
     int ep;
     Data* buffer;
+    int cnt;
 public:
     Queue();
     ~Queue();
