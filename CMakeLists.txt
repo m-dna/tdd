@@ -3,10 +3,18 @@ project(TDD)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# GoogleTest 빌드
+add_subdirectory(src/calculator)
+add_subdirectory(src/bj1094)
+
+
+# GoogleTest
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 add_subdirectory(gtest)
+add_subdirectory(test/calculator)
+add_subdirectory(test/bj1094)
+add_subdirectory(test/queue)
 
 option(COVERAGE "Enable coverage" ON)
 
@@ -15,27 +23,5 @@ if(COVERAGE)
     add_link_options(--coverage)
 endif()
 
-# ======================
-# Calculator 라이브러리(git/tdd/test/)
-# ======================
-add_library(stick
-    src/stick/stick.cpp
-)
-
-target_include_directories(stick PUBLIC include)
-
-# ======================
-# 테스트 실행 파일
-# ======================
-add_executable(stick_test
-    test/stick/stick_test.cpp
-)
-
-target_link_libraries(stick_test
-    stick
-    GTest::gtest_main
-)
-
 enable_testing()
 include(GoogleTest)
-gtest_discover_tests(stick_test)
