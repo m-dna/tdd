@@ -19,12 +19,14 @@ void Queue<Data>::clear() {
 
 template<class Data>
 void Queue<Data>::push(Data data) {
-    if (count == QUEUE_SIZE) throw std::overflow_error("Queue is full");
-
+    if (count == QUEUE_SIZE) {
+        sp = (sp + 1) % QUEUE_SIZE;
+    } else {
+        count++;
+    }
 
     buffer[ep] = data;
     ep = (ep + 1) % QUEUE_SIZE;
-    count++;
 }
 
 template<class Data>

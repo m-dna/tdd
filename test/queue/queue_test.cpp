@@ -57,10 +57,12 @@ TEST_F(QueueTest, throw_exception_when_empty) {
 
 TEST_F(QueueTest, throw_exception_when_full) {
     // 큐를 가득 채움 (QUEUE_SIZE가 20이라고 가정)
-    for(int i = 0; i < 20; i++) {
+    for(int i = 0; i < 30; i++) {
         int_queue.push(i);
     }
 
-    // 21번째 데이터를 넣으려고 할 때 에러 발생 확인
-    EXPECT_THROW(int_queue.push(99), std::overflow_error);
+    for (int i = 10; i < 30; i++) {
+        EXPECT_EQ(int_queue.pull(), i);
+    }
+    
 }
