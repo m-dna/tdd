@@ -23,7 +23,7 @@ int Calculator::modulo(int a, int b) {
     return a % b;
 }
 
-long long Calculator::power(int base, int exponent) {
+unsigned long long Calculator::power(int base, int exponent) {
     long long ret = 1;
     for (int i = 0; i < exponent; ++i) {
         ret *= base;
