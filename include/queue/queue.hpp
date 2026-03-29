@@ -18,6 +18,8 @@ public:
     Data pull();
     Data top();
     int size();
+    bool is_full();
+    bool is_empty();
 };
 
 #include "queue.tpp"
