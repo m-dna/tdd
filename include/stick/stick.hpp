@@ -11,10 +11,6 @@ public:
     void divide2(vector<int>& stick, int idx, int N);
     int get_cnt(vector<int> stick);
     int ans(vector<int> stick, int N);
-
-    
-
-    
   
 };
 

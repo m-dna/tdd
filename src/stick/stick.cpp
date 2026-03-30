@@ -41,6 +41,10 @@ int Stick::get_cnt(vector<int> stick){
     return temp;
 }
 
+
+
+
+
 int Stick::ans(vector<int> stick, int N){
     while(sum(stick)!=N){
         int idx = find_minidx(stick);

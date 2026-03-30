@@ -8,6 +8,7 @@ class Queue {
 private:
     int sp;
     int ep;
+    int count;
     Data* buffer;
 public:
     Queue();

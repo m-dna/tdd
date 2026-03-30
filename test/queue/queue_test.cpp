@@ -43,3 +43,37 @@ TEST_F(QueueTest, push_and_pull) {
     // then
     EXPECT_EQ(second, v2);
 }
+
+TEST_F(QueueTest, size){
+    int v1 = 1;
+    int v2 = 2;
+    int_queue.push(v1);
+    int_queue.push(v2);
+
+    EXPECT_EQ(int_queue.size(), 2);
+    
+}
+
+TEST_F(QueueTest, push_in_fullqueue) {
+    for (int i = 0; i < 20; i++) {
+        int_queue.push(i);
+    }
+
+    int_queue.push(20);
+    EXPECT_EQ(int_queue.top(), 1); 
+}
+
+TEST_F(QueueTest, pull_emptyQueue){
+    EXPECT_THROW(int_queue.pull(), std::invalid_argument);
+}
+
+TEST_F(QueueTest, push_getSize){
+    for(int i=0; i<QUEUE_SIZE; i++){
+        int_queue.push(i);
+    }
+    
+    int_queue.push(4);
+    int_queue.push(5);
+
+    EXPECT_EQ(int_queue.size(), 20);
+}
